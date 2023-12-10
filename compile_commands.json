@@ -1,0 +1,74 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "../app/include",
+      "-I",
+      "../third-party/include",
+      "-Wall",
+      "-DLOG_USE_COLOR",
+      "-c",
+      "-o",
+      "../app/ftp_cmd.o",
+      "../app/ftp_cmd.c"
+    ],
+    "directory": "/home/zzj/desktop/linux_pro/project/server/build",
+    "file": "/home/zzj/desktop/linux_pro/project/server/app/ftp_cmd.c",
+    "output": "/home/zzj/desktop/linux_pro/project/server/app/ftp_cmd.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "../app/include",
+      "-I",
+      "../third-party/include",
+      "-Wall",
+      "-DLOG_USE_COLOR",
+      "-c",
+      "-o",
+      "../app/ftp_server.o",
+      "../app/ftp_server.c"
+    ],
+    "directory": "/home/zzj/desktop/linux_pro/project/server/build",
+    "file": "/home/zzj/desktop/linux_pro/project/server/app/ftp_server.c",
+    "output": "/home/zzj/desktop/linux_pro/project/server/app/ftp_server.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "../app/include",
+      "-I",
+      "../third-party/include",
+      "-Wall",
+      "-DLOG_USE_COLOR",
+      "-c",
+      "-o",
+      "../app/session_thread.o",
+      "../app/session_thread.c"
+    ],
+    "directory": "/home/zzj/desktop/linux_pro/project/server/build",
+    "file": "/home/zzj/desktop/linux_pro/project/server/app/session_thread.c",
+    "output": "/home/zzj/desktop/linux_pro/project/server/app/session_thread.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "../app/include",
+      "-I",
+      "../third-party/include",
+      "-Wall",
+      "-DLOG_USE_COLOR",
+      "-c",
+      "-o",
+      "../third-party/log.o",
+      "../third-party/log.c"
+    ],
+    "directory": "/home/zzj/desktop/linux_pro/project/server/build",
+    "file": "/home/zzj/desktop/linux_pro/project/server/third-party/log.c",
+    "output": "/home/zzj/desktop/linux_pro/project/server/third-party/log.o"
+  }
+]
