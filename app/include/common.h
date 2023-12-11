@@ -1,13 +1,11 @@
 #ifndef __COMMON_H
 #define __COMMON_H
 
-
-
 /*
     报文格式：
-    客户端： 命令 + 字符串 \n\r
+    客户端： 命令 + 字符串 \r\n
 
-    服务端： 状态码 + 字符串 \n\r
+    服务端： 状态码 + 字符串 \r\n
 
 
 */
@@ -15,15 +13,13 @@
 #define FILEEOF 0
 // 服务端响应
 
-#define COMMAND_ERR 502 // 没有识别到命令 502 Command not recognized\n\r
-#define SERVER_ALREADLY 220 // 连接成功   220 SwiFTP4.5.1.0 ready\n\r
-#define USERNAME_OK 331 // 用户名正确,需要密码 331 Send password\n\r
-#define USER_LOIGNING_SUCCESS                                                  \
-  230 // 用户登陆成功，具有数据访问权限  230 Access granted\n\r
-#define PATH 257      // 返回路径   257 "\"\n\r 表示在根目录
-#define DATA_CONN 150 // 150 opening BINARY mode data conne ction for file list.
-#define DATA_EOF                                                               \
-  226 //  226 关闭数据连接。请求的文件操作已成功 226 Data transmiss ion oK\n\r
+#define COMMAND_ERR 502           // 没有识别到命令 502 Command not recognized\r\n
+#define SERVER_ALREADLY 220       // 连接成功   220 SwiFTP4.5.1.0 ready\r\n
+#define USERNAME_OK 331           // 用户名正确,需要密码 331 Send password\r\n
+#define USER_LOIGNING_SUCCESS 230 // 用户登陆成功，具有数据访问权限  230 Access granted\r\n
+#define PATH 257                  // 返回路径   257 "\"\r\n 表示在根目录
+#define DATA_CONN 150             // 150 opening BINARY mode data conne ction for file list.
+#define DATA_EOF 226 //  226 关闭数据连接。请求的文件操作已成功 226 Data transmiss ion oK\r\n
 
 // 客户端请求指令
 
@@ -62,7 +58,5 @@
 // MLSD     列出指定目录的详细信息。
 // HASH     计算文件的哈希值。
 // RANG     定义数据传输的范围。
-
-
 
 #endif

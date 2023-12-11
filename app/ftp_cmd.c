@@ -10,9 +10,10 @@
 #include <libgen.h>
 #include <string.h>
 #include <strings.h>
+#include <sys/stat.h>
 
 const char *map[] = {
-    "SYST", "USER", "PASS", "PORT", "CWD", "PWD",  "LIST", "PASV",
+    "SYST", "USER", "PASS",  "CWD", "PWD",  "LIST", "PASV", "PORT",
     "RETR", "STOR", "DELE", "RMD",  "MKD", "QUIT", "SIZE", "FEAT",
 };
 
@@ -24,9 +25,9 @@ void syst_run(void *_self)
     FtpCmd *self = (FtpCmd *)_self;
     SessionInfo *sess = self->sess;
     char *response = "215 UNIX Type: L8\r\n";
-    log_info("SYST executing");
+    log_info("function: syst_run: SYST executing");
     sess->__send_by_cmd(sess, response);
-    log_info("SYST finished");
+    log_info("function: syst_run: SYST finished");
 }
 
 // 用户
@@ -35,9 +36,9 @@ void user_run(void *_self)
     FtpCmd *self = (FtpCmd *)_self;
     SessionInfo *sess = self->sess;
     char *response = "331 Send password\r\n";
-    log_info("USER executing");
+    log_info("function: user_run: USER executing");
     sess->__send_by_cmd(sess, response);
-    log_info("USER finished");
+    log_info("function: user_run: USER finished");
 }
 
 // 密码
@@ -46,9 +47,9 @@ void pass_run(void *_self)
     FtpCmd *self = (FtpCmd *)_self;
     SessionInfo *sess = self->sess;
     char *response = "230 Access granted\r\n";
-    log_info("PASS executing");
+    log_info("function: pass_run: PASS executing");
     sess->__send_by_cmd(sess, response);
-    log_info("PASS finished");
+    log_info("function: pass_run: PASS finished");
 }
 
 // 切换目录
@@ -57,10 +58,11 @@ void cwd_run(void *_self)
     int err;
     FtpCmd *self = (FtpCmd *)_self;
     SessionInfo *sess = self->sess;
+    char path[256];
     struct stat statbuf;
-    char *errStr;
+    char *errStr = NULL;
 
-    log_info("CWD executing");
+    log_info("function: cwd_run: CWD executing");
     // 访问到根目录以外的目录
     if ((self->cmd[0] == '/' && strcmp(self->sess->rootFile, self->cmd)) ||
         (!strcmp(self->arg, "..") && strcmp(self->sess->rootFile, self->sess->workFile)))
@@ -69,12 +71,12 @@ void cwd_run(void *_self)
         sess->__send_by_cmd(sess, errStr);
         goto err;
     }
-
-    err = stat(self->arg, &statbuf);
+    sprintf(path, "%s/%s", sess->workFile, self->arg);
+    err = stat(path, &statbuf);
     // 没有这个文件
-    if (err == -1)
+    if (err == -1 || !S_ISDIR(statbuf.st_mode))
     {
-        errStr = "550 Invalid name or chroot violation\r\n";
+        errStr = "550 Invalid name\r\n";
         sess->__send_by_cmd(sess, errStr);
         goto err;
     }
@@ -87,15 +89,19 @@ void cwd_run(void *_self)
         if (!strcmp(self->arg, ".."))
             dirname(sess->workFile);
         else
+        {
+            strcat(sess->workFile, "/");
             strcat(sess->workFile, self->arg);
+        }
     }
 
-    sess->__send_by_cmd(sess, "250 CWD successful");
+    sess->__send_by_cmd(sess, "250 CWD successful\r\n");
+    log_info("function: cwd_run: CWD complete, %s", self->arg);
+    return;
 
-    log_info("CWD complete, %s", self->arg);
 
 err:
-    log_warn(errStr);
+    log_warn("function: cwd_run: %s", errStr);
 }
 
 // 当前目录
@@ -105,12 +111,12 @@ void pwd_run(void *_self)
     SessionInfo *sess = self->sess;
     char response[512];
 
-    log_info("PWD executing");
-    snprintf(response, sizeof(response), "257 %s\r\n", sess->workFile);
+    log_info("function: pwd_run: PWD executing");
+    snprintf(response, sizeof(response), "257 \"%s\"\r\n", sess->workFile);
 
-    sess->__send_by_cmd(sess, "257 CWD successful");
+    sess->__send_by_cmd(sess, response);
 
-    log_info("CWD complete, %s", self->arg);
+    log_info("function: pwd_run: PWD complete, %s", self->arg);
 }
 
 // 目录列表
@@ -155,7 +161,9 @@ void mkd_run(void *_self)
 void quit_run(void *_self)
 {
     FtpCmd *self = (FtpCmd *)_self;
+    SessionInfo *sess = self->sess;
     self->sess->isRun = 0;
+    sess->__send_by_cmd(sess, "211 Goodbye\r\n");
 }
 
 // 获取文件大小
@@ -168,35 +176,36 @@ void feat_run(void *_self)
 {
     FtpCmd *self = (FtpCmd *)_self;
     SessionInfo *sess = self->sess;
-    log_info("Giving FEAT");
+    log_info("function: feat_run: Giving FEAT");
     sess->__send_by_cmd(sess, "211-Features supported\r\n");
     sess->__send_by_cmd(sess, " UTF-8\r\n");
     sess->__send_by_cmd(sess, "211 End\r\n");
-    log_info("Gave FEAT");
+    log_info("function: feat_run: Gave FEAT");
 }
+
+
 
 void cmd_structor(void *_self)
 {
     FtpCmd *self = (FtpCmd *)_self;
     SessionInfo *sess = self->sess;
+    char *ptrptr = NULL;
+    char *token = NULL;
+    char *rest = NULL;
     bzero(self->cmd, sizeof(self->cmd));
     bzero(self->arg, sizeof(self->arg));
-    for (int i = 0, flag = 0, j = 0; i < strlen(self->sess->cmdBuf); i++)
+    
+    sess->cmdBuf[strlen(sess->cmdBuf) - 2] = '\0';
+
+    rest = sess->cmdBuf;
+    token = strtok_r(rest, " ", &ptrptr);
+    strcpy(self->cmd, token);
+    if(ptrptr != NULL)
     {
-        if (sess->cmdBuf[i] == ' ')
-        {
-            flag = 1;
-            j = 0;
-            continue;
-        }
-        if(sess->cmdBuf[i] == '\r')
-            continue;
-        if (!flag)
-            self->cmd[j++] = sess->cmdBuf[i];
-        else
-            self->arg[j++] = sess->cmdBuf[i];
+        strcpy(self->arg, ptrptr);
     }
-    printf("cmd: %s\narg:%s\n", self->cmd, self->arg);
+    
+    log_info("function: cmd_structor: cmd:%s, arg:%s.", self->cmd, self->arg);
 }
 
 void ftp_cmd_init(void *_self, struct SessionInfo *sess)
