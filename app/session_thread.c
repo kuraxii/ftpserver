@@ -41,18 +41,18 @@ void *session_thread(void *arg)
     set_ftp_cmd_method(ftpCmd);
     ftpCmd->__init(ftpCmd, self);
 
-    self->__welccome(self);
+    welccome(self);
 
     while (self->isRun)
     {
-        ret = self->__recv_by_cmd(self);
+        ret = recv_by_cmd(self);
         if (ret == -1)
         {
             goto exit;
         }
 
 #if 1
-        ftpCmd->__cmd_structor(ftpCmd);
+        cmd_structor(ftpCmd);
         for (i = SYST; i < COMMAND_COUNT; i++)
         {
             if (!strcmp(ftpCmd->cmdMap.Map[i], ftpCmd->cmd))
@@ -61,7 +61,7 @@ void *session_thread(void *arg)
                 if (!self->islogged && i != USER)
                 {
 
-                    self->__send_by_cmd(self, "530 Login first with USER and PASS\r\n");
+                    send_by_cmd(self, "530 Login first with USER and PASS\r\n");
                     log_info("Operation failed, Not logged in. IP: %s", inet_ntoa(self->cmdSocket->addr.sin_addr));
                     break;
                 }
@@ -72,7 +72,7 @@ void *session_thread(void *arg)
 #endif
         if (i == COMMAND_COUNT)
         {
-            self->__send_by_cmd(self, "502 Comman not recognized\r\n");
+            send_by_cmd(self, "502 Comman not recognized\r\n");
             log_info("Operation failed, Invalid command. Command: %s ,IP: %s", ftpCmd->cmd,
                      inet_ntoa(self->cmdSocket->addr.sin_addr));
         }
@@ -91,6 +91,7 @@ void session_init(void *_self, Socket *p_sock)
     SessionInfo *self = _self;
     char *home_dir = getenv("HOME");
     self->cmdSocket = calloc(1, sizeof(Socket));
+    self->dataSocket = calloc(1, sizeof(Socket));
     memcpy(self->cmdSocket, p_sock, sizeof(Socket));
     memcpy(self->rootFile, home_dir, strlen(home_dir));
     memcpy(self->workFile, home_dir, strlen(home_dir));
@@ -124,10 +125,10 @@ void session_exit(void *_self)
     free(_self);
 }
 
-void session_welccome(void *_self)
+void welccome(void *_self)
 {
     SessionInfo *self = _self;
-    self->__send_by_cmd(self, "220 zjFTP 0.0.0.1 ready\r\n");
+    send_by_cmd(self, "220 zjFTP 0.0.0.1 ready\r\n");
 }
 
 int send_by_cmd(void *_self, char *response) // 以cmd套接字发送数据
@@ -172,7 +173,5 @@ void set_session_method(void *_self)
     SessionInfo *self = _self;
     self->__init = session_init;
     self->__exit = session_exit;
-    self->__welccome = session_welccome;
-    self->__recv_by_cmd = recv_by_cmd;
-    self->__send_by_cmd = send_by_cmd;
+
 }

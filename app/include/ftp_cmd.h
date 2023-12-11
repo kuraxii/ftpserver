@@ -9,10 +9,14 @@
 
 #ifndef __FTP_CMD_H
 
+struct FtpCmd;
+
+typedef struct FtpCmd FtpCmd;
+
 typedef struct cmdMap
 {
     const char **  Map;
-    void (**cmdFunc)(void*);
+    void (**cmdFunc)(FtpCmd*);
 } CmdMap;
 
 enum CmdNo
@@ -43,12 +47,12 @@ typedef struct FtpCmd
     char arg[255]; // arg
     SessionInfo *sess;
     CmdMap cmdMap;                 // cmdmap
-    void (*__cmd_structor)(void *); // cmd数据格式化
-    void (*__init)(void *, SessionInfo *);
-    void (*__exit)(void *);
+    void (*__init)(FtpCmd *, SessionInfo *);
+    void (*__exit)(FtpCmd *);
 } FtpCmd;
 
-void set_ftp_cmd_method(void *self);
+void set_ftp_cmd_method(FtpCmd *self);
+void cmd_structor(FtpCmd *_self);
 
 #define __ftp_cmd_H
 #endif
