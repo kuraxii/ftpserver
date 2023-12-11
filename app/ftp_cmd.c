@@ -13,8 +13,8 @@
 #include <sys/stat.h>
 
 const char *map[] = {
-    "SYST", "USER", "PASS",  "CWD", "PWD",  "LIST", "PASV", "PORT",
-    "RETR", "STOR", "DELE", "RMD",  "MKD", "QUIT", "SIZE", "FEAT",
+    "SYST", "USER", "PASS", "CWD", "PWD", "LIST", "PASV", "PORT",
+    "RETR", "STOR", "DELE", "RMD", "MKD", "QUIT", "SIZE", "FEAT",
 };
 
 const char *administrator[2] = {"zzj", "123456"}; // 默认账号
@@ -64,8 +64,8 @@ void cwd_run(void *_self)
 
     log_info("function: cwd_run: CWD executing");
     // 访问到根目录以外的目录
-    if ((self->cmd[0] == '/' && strcmp(self->sess->rootFile, self->cmd)) ||
-        (!strcmp(self->arg, "..") && strcmp(self->sess->rootFile, self->sess->workFile)))
+    if ((self->cmd[0] == '/' && strcmp(sess->rootFile, self->cmd) < 0) ||
+        (!strcmp(self->arg, "..") && !strcmp(sess->rootFile, sess->workFile)))
     {
         errStr = "550 Invalid name or chroot violation\r\n";
         sess->__send_by_cmd(sess, errStr);
@@ -82,13 +82,13 @@ void cwd_run(void *_self)
     }
     if (self->cmd[0] == '/')
     {
-        strcpy(self->sess->workFile, self->arg);
+        strcpy(sess->workFile, self->arg);
     }
     else
     {
         if (!strcmp(self->arg, ".."))
             dirname(sess->workFile);
-        else
+        else if (strcmp(self->arg, "."))
         {
             strcat(sess->workFile, "/");
             strcat(sess->workFile, self->arg);
@@ -98,7 +98,6 @@ void cwd_run(void *_self)
     sess->__send_by_cmd(sess, "250 CWD successful\r\n");
     log_info("function: cwd_run: CWD complete, %s", self->arg);
     return;
-
 
 err:
     log_warn("function: cwd_run: %s", errStr);
@@ -183,8 +182,6 @@ void feat_run(void *_self)
     log_info("function: feat_run: Gave FEAT");
 }
 
-
-
 void cmd_structor(void *_self)
 {
     FtpCmd *self = (FtpCmd *)_self;
@@ -194,17 +191,17 @@ void cmd_structor(void *_self)
     char *rest = NULL;
     bzero(self->cmd, sizeof(self->cmd));
     bzero(self->arg, sizeof(self->arg));
-    
+
     sess->cmdBuf[strlen(sess->cmdBuf) - 2] = '\0';
 
     rest = sess->cmdBuf;
     token = strtok_r(rest, " ", &ptrptr);
     strcpy(self->cmd, token);
-    if(ptrptr != NULL)
+    if (ptrptr != NULL)
     {
         strcpy(self->arg, ptrptr);
     }
-    
+
     log_info("function: cmd_structor: cmd:%s, arg:%s.", self->cmd, self->arg);
 }
 
