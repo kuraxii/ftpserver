@@ -32,7 +32,11 @@ void getip(int sockfd, int *ip)
     getsockname(sockfd, (struct sockaddr *)&addr, &addr_size);
 
     char *host = inet_ntoa(addr.sin_addr);
-    log_trace("function: getip: ip: %s", host);
+
+#ifdef DEBUG
+    log_debug("function: getip: ip: %s", host);
+#endif
+
     sscanf(host, "%d.%d.%d.%d", &ip[0], &ip[1], &ip[2], &ip[3]);
 }
 
@@ -193,8 +197,9 @@ void list_run(FtpCmd *ftpCmd)
             goto open_err;
         }
 
-        log_trace("path: %s", path);
-
+#ifdef DEBUG
+        log_debug("path: %s", path);
+#endif
         sprintf(cmd, "ls -l %s", path);
 
         if (access(path, R_OK) || (fp = popen(cmd, "r")) == NULL)
@@ -217,8 +222,10 @@ void list_run(FtpCmd *ftpCmd)
         close(sess->dataSocket->listenFd);
         sess->dataSocket->listenFd = -1;
         sess->isPasv = 0;
-        log_trace("function: retr_run: set ispasv: 0");
 
+#ifdef DEBUG
+        log_debug("function: retr_run: set ispasv: 0");
+#endif
         sess->dataSocket->fpOut = fdopen(sess->dataSocket->socketFd, "w");
 
         response = "150 Send file.\n";
@@ -268,7 +275,9 @@ notlogged:
         close(sess->dataSocket->listenFd);
         sess->dataSocket->listenFd = -1;
         sess->isPasv = 0;
-        log_trace("function: retr_run: set ispasv: 0");
+#ifdef DEBUG
+        log_debug("function: retr_run: set ispasv: 0");
+#endif
     }
     send_by_cmd(sess, response);
 }
@@ -300,8 +309,9 @@ void pasv_run(FtpCmd *ftpCmd)
 
     sess->dataSocket->listenFd = sockinit(NULL, port[0] * 256 + port[1]);
     sess->isPasv = 1;
-    log_trace("function: retr_run: set ispasv: 1");
-
+#ifdef DEBUG
+    log_debug("function: retr_run: set ispasv: 1");
+#endif
     sprintf(sess->messsge, "227 Entering Passive Mode (%d,%d,%d,%d,%d,%d)\r\n", ip[0], ip[1], ip[2], ip[3], port[0],
             port[1]);
 
@@ -350,7 +360,7 @@ void retr_run(FtpCmd *ftpCmd)
     char *response = NULL;
     char path[255];
     char buf[4096];
-    char *err;
+    int err;
     int ret;
     struct stat statbuf;
     FILE *fp = NULL;
@@ -374,9 +384,9 @@ void retr_run(FtpCmd *ftpCmd)
             log_error("function: retr_run: open file: %s error", path);
             goto open_err;
         }
-
-        log_trace("path: %s", path);
-
+#ifdef DEBUG
+        log_debug("path: %s", path);
+#endif
         if (access(path, R_OK) || (fp = fopen(path, "r")) == NULL)
         {
             response = "550 Failed to open file.\r\n";
@@ -397,8 +407,10 @@ void retr_run(FtpCmd *ftpCmd)
         close(sess->dataSocket->listenFd);
         sess->dataSocket->listenFd = -1;
         sess->isPasv = 0;
-        log_trace("function: retr_run: set ispasv: 0");
 
+#ifdef DEBUG
+        log_debug("function: retr_run: set ispasv: 0");
+#endif
         sess->dataSocket->fpOut = fdopen(sess->dataSocket->socketFd, "w");
 
         response = "150 Send file.\n";
@@ -406,8 +418,8 @@ void retr_run(FtpCmd *ftpCmd)
 
         while (1)
         {
-            err = fgets(buf, sizeof(buf), fp);
-            if (err == NULL)
+            err = fread(buf, 1, sizeof(buf), fp);
+            if (err == 0)
             {
                 if (ferror(fp))
                 {
@@ -420,7 +432,7 @@ void retr_run(FtpCmd *ftpCmd)
                 goto end_of_file;
             }
 
-            fputs(buf, sess->dataSocket->fpOut);
+            fwrite(buf, 1, err, fp);
         }
     }
     else if (sess->isPort)
@@ -441,8 +453,9 @@ notlogged:
         close(sess->dataSocket->listenFd);
         sess->dataSocket->listenFd = -1;
         sess->isPasv = 0;
-
-        log_trace("function: retr_run: set ispasv: 0");
+#ifdef DEBUG
+        log_debug("function: retr_run: set ispasv: 0");
+#endif
     }
     send_by_cmd(sess, response);
 }
@@ -454,9 +467,7 @@ void stor_run(FtpCmd *ftpCmd)
     char *response = NULL;
     char path[255];
     char buf[4096];
-    char *err;
-    int ret;
-    struct stat statbuf;
+    int err;
     FILE *fp = NULL;
 
     if (!sess->islogged)
@@ -471,17 +482,10 @@ void stor_run(FtpCmd *ftpCmd)
     { // 被动模式
         struct_path(path, sess->workDir, ftpCmd->arg);
 
-        ret = stat(path, &statbuf);
-        if (ret == -1 || S_ISDIR(statbuf.st_mode))
-        {
-            response = "550 Failed to open file.\r\n";
-            log_error("function: stor_run: open file: %s error", path);
-            goto open_err;
-        }
-
-        log_trace("path: %s", path);
-
-        if (access(path, R_OK) || (fp = fopen(path, "w")) == NULL)
+#ifdef DEBUG
+        log_debug("path: %s", path);
+#endif
+        if ((fp = fopen(path, "w")) == NULL)
         {
             response = "550 Failed to open file.\r\n";
             log_error("function: stor_run: open file: %s error", path);
@@ -501,30 +505,27 @@ void stor_run(FtpCmd *ftpCmd)
         close(sess->dataSocket->listenFd);
         sess->dataSocket->listenFd = -1;
         sess->isPasv = 0;
-        log_trace("function: retr_run: set ispasv: 0");
+#ifdef DEBUG       
+        log_debug("function: retr_run: set ispasv: 0");
+#endif
+        sess->dataSocket->fpIn = fdopen(sess->dataSocket->socketFd, "r");
 
-        sess->dataSocket->fpOut = fdopen(sess->dataSocket->socketFd, "w");
-
-        response = "150 Send file.\n";
+        response = "125 Data connection already open; transfer starting.\r\n";
         send_by_cmd(sess, response);
 
         while (1)
         {
-            err = fgets(buf, sizeof(buf), sess->dataSocket->fpOut);
-            if (err == NULL)
+            
+            err = fread(buf, 1, sizeof(buf), sess->dataSocket->fpIn);
+            if (err == 0)
             {
-                if (ferror(sess->dataSocket->fpOut))
-                {
-                    log_error("function: stor_run: read file: %s error", path);
-                    response = "550 Failed to read file.\r\n";
-                    goto read_err;
-                }
-                log_info("function: stor_run: read end of file: %s", path);
+                log_info("function: stor_run: read end of socket");
                 response = "226 Transmission finished.\r\n";
                 goto end_of_file;
             }
 
-            fputs(buf, fp);
+            fwrite(buf, 1, err, fp);
+        
         }
     }
     else if (sess->isPort)
@@ -532,10 +533,10 @@ void stor_run(FtpCmd *ftpCmd)
         // 主动模式
     }
 
-read_err:
+
 end_of_file:
     fclose(fp);
-    fclose(sess->dataSocket->fpOut);
+    fclose(sess->dataSocket->fpIn);
 
 accept_err:
 open_err:
@@ -543,9 +544,10 @@ notlogged:
     if (sess->isPasv)
     {
         close(sess->dataSocket->listenFd);
-        sess->dataSocket->listenFd = -1;
         sess->isPasv = 0;
-        log_trace("function: retr_run: set ispasv: 0");
+#ifdef DEBUG
+        log_debug("function: retr_run: set ispasv: 0");
+#endif
     }
     send_by_cmd(sess, response);
 }
