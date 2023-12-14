@@ -25,10 +25,11 @@
 
 #ifndef __FTP_SERVER_H
 #define __FTP_SERVER_H
-#define MAX_AUTH_FAILS 3;
+#define MAX_AUTH_FAILS 3
 
 typedef struct Socket
 {
+    int listenFd;
     int socketFd;
     FILE* fpIn;
     FILE* fpOut;

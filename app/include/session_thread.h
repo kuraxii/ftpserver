@@ -11,28 +11,31 @@
 
 void set_session_method(void *); // 装入函数
 
-void session_init(void *, Socket *);
-void session_exit(void *);
-void welccome(void *);
-int recv_by_cmd(void *_self);
-int send_by_cmd(void *_self, char *response);
+
 typedef struct SessionInfo
 {
-    char userName[20];  // 用户名
-    char workFile[255]; // 当前工作目录
-    char rootFile[255]; // 根目录
-    char cmdBuf[255];   // cmd缓冲区
-    char messsge[255];  // 发送消息缓冲区
-    int isPasv;         // 被动模式
-    int isRun;          // 是否运行
-    int islogged;       // 是否登录
-    int isDataSocketConn;   // 数据socket是否连接
-    Socket *dataSocket; // 数据socket
-    Socket *cmdSocket;  // 命令socket
-    void (*__init)(void *, Socket *);
-    void (*__exit)(void *);
+    char userName[20];    // 用户名
+    char workDir[255];    // 当前工作目录
+    char rootDir[255];   // 根目录
+    char cmdBuf[255];     // cmd缓冲区
+    char messsge[255];    // 发送消息缓冲区
+    int isPasv;           // 被动模式
+    int isPort;           // 主动模式
+    int isRun;            // 是否运行
+    int islogged;         // 是否登录
+    int isDataSocketConn; // 数据socket是否连接
+    Socket *dataSocket;   // 数据socket
+    Socket *cmdSocket;    // 命令socket
+  
 } SessionInfo;
 
 void *session_thread(void *arg);
+
+void session_init(SessionInfo *, Socket *);
+void session_exit(SessionInfo *);
+void welccome(SessionInfo *);
+int recv_by_cmd(SessionInfo *);
+int send_by_cmd(SessionInfo *, char *);
+int send_by_cmd2(SessionInfo *);
 
 #endif

@@ -64,6 +64,24 @@
       "-DLOG_USE_COLOR",
       "-c",
       "-o",
+      "../app/ftp_log.o",
+      "../app/ftp_log.c"
+    ],
+    "directory": "/home/zzj/desktop/linux_pro/project/server/build",
+    "file": "/home/zzj/desktop/linux_pro/project/server/app/ftp_log.c",
+    "output": "/home/zzj/desktop/linux_pro/project/server/app/ftp_log.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-I",
+      "../app/include",
+      "-I",
+      "../third-party/include",
+      "-Wall",
+      "-DLOG_USE_COLOR",
+      "-c",
+      "-o",
       "../third-party/log.o",
       "../third-party/log.c"
     ],

@@ -72,7 +72,7 @@ int sockinit(char *ipaddr, unsigned short port) // 初始化服务端套接字
     if (lfd == -1)
     {
         perror("socket");
-        return -1;
+        exit(-1);
     }
 
     int opt = 1, ret;

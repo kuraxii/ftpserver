@@ -8,6 +8,7 @@
 #include "session_thread.h"
 
 #ifndef __FTP_CMD_H
+#define __FTP_CMD_H
 
 struct FtpCmd;
 
@@ -37,6 +38,7 @@ enum CmdNo
     QUIT,
     SIZE,
     FEAT,
+    TYPE,
     COMMAND_COUNT
 };
 
@@ -47,12 +49,13 @@ typedef struct FtpCmd
     char arg[255]; // arg
     SessionInfo *sess;
     CmdMap cmdMap;                 // cmdmap
-    void (*__init)(FtpCmd *, SessionInfo *);
-    void (*__exit)(FtpCmd *);
+   
 } FtpCmd;
 
-void set_ftp_cmd_method(FtpCmd *self);
-void cmd_structor(FtpCmd *_self);
 
-#define __ftp_cmd_H
+void cmd_structor(FtpCmd *);
+void ftp_cmd_init(FtpCmd *, struct SessionInfo *);
+void ftp_cmd_exit(FtpCmd *);
+
+
 #endif

@@ -27,7 +27,7 @@ void log_init()
 {
 
     FILE *fp = fopen("ftp_server.log", "a");
-    log_add_fp(fp, DEBUG); // 设置的级别为写入文件的最低级别
+    log_add_fp(fp, TRACE); // 设置的级别为写入文件的最低级别
     // log_set_level(INFO);   // 设置输出级别 >= level
     log_set_quiet(true);
     log_set_lock(log_lock, &MUTEX_LOG);
