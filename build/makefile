@@ -23,7 +23,7 @@ SERVER_SRCS = $(APP_DIR)/ftp_cmd.c \
 
 
 # 测试单元源文件
-TEST_SRCS = ./gtest.cpp
+TEST_SRCS = ../test/gtest.cpp
 
 # obj文件
 C_OBJS = $(SERVER_SRCS:.c=.o)
@@ -51,12 +51,12 @@ CFLAGS = -Wall -DLOG_USE_COLOR
 
 # server
 $(TARGET): $(C_OBJS) $(CPP_OBJS)
-	$(CC) -o $(TARGET) $(C_OBJS) $(CPP_OBJS) $(LIBS) $(LDFLAGS) $(INCLUDE) $(INCLUDE) -g
+	$(CC) -o $(TARGET) $(C_OBJS) $(CPP_OBJS) $(LIBS) $(LDFLAGS)  $(INCLUDE) -g
 	
 
 # test
 $(TARGET_TEST): $(TEST_SRCS)
-	$(CPP) -o $(TARGET_TEST) $(TEST_SRCS) $(TEST_LIBS) $(CFLAGS)
+	$(CPP) -o $(TARGET_TEST) $(TEST_SRCS) $(TEST_LIBS) $(CFLAGS) $(INCLUDE) 
 
 # 清理
 clean:

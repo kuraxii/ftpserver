@@ -49,8 +49,6 @@ void *session_thread(void *arg)
         {
             goto exit;
         }
-
-#if 1
         cmd_structor(ftpCmd);
         for (i = SYST; i < COMMAND_COUNT; i++)
         {
@@ -68,7 +66,6 @@ void *session_thread(void *arg)
                 break;
             }
         }
-#endif
         if (i == COMMAND_COUNT)
         {
             send_by_cmd(sess, "502 Comman not recognized\r\n");

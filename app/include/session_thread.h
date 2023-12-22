@@ -11,7 +11,6 @@
 
 void set_session_method(void *); // 装入函数
 
-
 typedef struct SessionInfo
 {
     char userName[20];    // 用户名

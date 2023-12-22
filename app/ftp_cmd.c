@@ -261,7 +261,7 @@ void list_run(FtpCmd *ftpCmd)
     {
         // 主动模式
     }
-
+    
 read_err:
 end_of_file:
     fclose(fp);
@@ -702,7 +702,7 @@ void feat_run(FtpCmd *ftpCmd)
 
 void type_run(FtpCmd *ftpCmd)
 {
-
+    // 仅支持二进制模式
     SessionInfo *sess = ftpCmd->sess;
 
     char *response = NULL;
@@ -719,7 +719,6 @@ void type_run(FtpCmd *ftpCmd)
     else if (ftpCmd->arg[0] == 'A')
     {
 
-        /* Type A must be always accepted according to RFC */
         response = "200 Switching to ASCII mode.\r\n";
     }
     else
