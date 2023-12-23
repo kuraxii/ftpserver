@@ -69,8 +69,9 @@ void syst_run(FtpCmd *ftpCmd)
 // 用户
 void user_run(FtpCmd *ftpCmd)
 {
-
     SessionInfo *sess = ftpCmd->sess;
+    strcpy(sess->userName, administrator[0]);
+
     char *response = "331 Send password\r\n";
     log_info("function: user_run: USER executing");
     send_by_cmd(sess, response);
@@ -80,10 +81,52 @@ void user_run(FtpCmd *ftpCmd)
 // 密码
 void pass_run(FtpCmd *ftpCmd)
 {
-
     SessionInfo *sess = ftpCmd->sess;
-    char *response = "230 Access granted\r\n";
+    char *response;
+
     log_info("function: pass_run: PASS executing");
+    if (strcmp(sess->userName, administrator[0]) == 0 && strcmp(ftpCmd->arg, administrator[1]) == 0)
+    {
+        sess->islogged = 1;
+        response = "230 Access granted\r\n";
+        goto over;
+    }
+  
+    // 不是默认管理员，检查 user.pass 文件
+    FILE *file = fopen("user.pass", "a+");
+    char line[256];
+    int loginSuccess = 0;
+
+    if (file != NULL)
+    {
+        char *saveptr;
+        while (fgets(line, sizeof(line), file))
+        {
+            char *username = strtok_r(line, ",", &saveptr);
+            char *password = strtok_r(NULL, "\n", &saveptr);
+
+            if (username != NULL && password != NULL && strcmp(username, sess->userName) == 0 &&
+                strcmp(password, ftpCmd->arg) == 0)
+            {
+                loginSuccess = 1;
+                break;
+            }
+        }
+        fclose(file);
+    }
+
+    if (loginSuccess)
+    {
+        sess->islogged = 1;
+        response = "230 Access granted\r\n";
+    }
+    else
+    {
+        response = "530 Login incorrect\r\n";
+    }
+    
+
+over:
     send_by_cmd(sess, response);
     log_info("function: pass_run: PASS finished");
 }
@@ -261,7 +304,7 @@ void list_run(FtpCmd *ftpCmd)
     {
         // 主动模式
     }
-    
+
 read_err:
 end_of_file:
     fclose(fp);
@@ -315,7 +358,7 @@ void pasv_run(FtpCmd *ftpCmd)
     sprintf(sess->messsge, "227 Entering Passive Mode (%d,%d,%d,%d,%d,%d)\r\n", ip[0], ip[1], ip[2], ip[3], port[0],
             port[1]);
 
-    send_by_cmd(sess, sess->messsge);
+    send_by_cmd2(sess);
     log_info("function: pasv_run: PASV set complete");
 }
 
@@ -505,7 +548,7 @@ void stor_run(FtpCmd *ftpCmd)
         close(sess->dataSocket->listenFd);
         sess->dataSocket->listenFd = -1;
         sess->isPasv = 0;
-#ifdef DEBUG       
+#ifdef DEBUG
         log_debug("function: retr_run: set ispasv: 0");
 #endif
         sess->dataSocket->fpIn = fdopen(sess->dataSocket->socketFd, "r");
@@ -515,7 +558,7 @@ void stor_run(FtpCmd *ftpCmd)
 
         while (1)
         {
-            
+
             err = fread(buf, 1, sizeof(buf), sess->dataSocket->fpIn);
             if (err == 0)
             {
@@ -525,14 +568,12 @@ void stor_run(FtpCmd *ftpCmd)
             }
 
             fwrite(buf, 1, err, fp);
-        
         }
     }
     else if (sess->isPort)
     {
         // 主动模式
     }
-
 
 end_of_file:
     fclose(fp);
@@ -752,9 +793,14 @@ void cmd_structor(FtpCmd *ftpCmd)
     log_info("function: cmd_structor: cmd:%s, arg:%s.", ftpCmd->cmd, ftpCmd->arg);
 }
 
-void ftp_cmd_init(FtpCmd *ftpCmd, struct SessionInfo *sess)
+FtpCmd *ftp_cmd_init(FtpCmd *ftpCmd, struct SessionInfo *sess)
 {
-
+    ftpCmd = calloc(1, sizeof(FtpCmd));
+    if (ftpCmd == NULL)
+    {
+        log_fatal("calloc error");
+        pthread_exit(NULL);
+    }
     // 将功能模块装入函数列表
     void (**func)(FtpCmd *) = calloc(COMMAND_COUNT, sizeof(void (*)(void *)));
     func[0] = syst_run;
@@ -778,6 +824,8 @@ void ftp_cmd_init(FtpCmd *ftpCmd, struct SessionInfo *sess)
 
     ftpCmd->sess = sess;
     ftpCmd->cmdMap.Map = map;
+
+    return ftpCmd;
 }
 
 void ftp_cmd_exit(FtpCmd *ftpCmd)

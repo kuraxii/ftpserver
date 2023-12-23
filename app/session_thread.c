@@ -31,14 +31,15 @@ void *session_thread(void *arg)
     int ret;
     Socket *sock = (Socket *)arg;
 
-    FtpCmd *ftpCmd = calloc(1, sizeof(FtpCmd));
-    SessionInfo *sess = calloc(1, sizeof(SessionInfo));
+    FtpCmd *ftpCmd = NULL;
+    SessionInfo *sess = NULL;
 
-    session_init(sess, sock);
-    // // 功能测试 默认已登录
-    sess->islogged = 1;
+    sess = session_init(sess, sock);
+    ftpCmd = ftp_cmd_init(ftpCmd, sess);
+    // 功能测试 默认已登录
+    // sess->islogged = 1;
    
-    ftp_cmd_init(ftpCmd, sess);
+    
 
     welccome(sess);
 
@@ -54,8 +55,8 @@ void *session_thread(void *arg)
         {
             if (!strcmp(ftpCmd->cmdMap.Map[i], ftpCmd->cmd))
             {
-                // 未登录状态 除了接收到USER 否则返回  530 Login first with USER and PASS
-                if (!sess->islogged && i != USER)
+                // 未登录状态 除了接收到USER PASS 否则返回  530 Login first with USER and PASS
+                if (!sess->islogged && (i != USER && i != PASS))
                 {
 
                     send_by_cmd(sess, "530 Login first with USER and PASS\r\n");
@@ -82,9 +83,14 @@ exit:
     pthread_exit(NULL);
 }
 
-void session_init(SessionInfo *sess, Socket *p_sock)
+SessionInfo* session_init(SessionInfo *sess, Socket *p_sock)
 {
-
+    sess = calloc(1, sizeof(SessionInfo));
+    if(sess == NULL)
+    {
+        log_fatal("calloc error");
+        pthread_exit(NULL);
+    }
     char *home_dir = getenv("HOME");
     sess->cmdSocket = calloc(1, sizeof(Socket));
     sess->dataSocket = calloc(1, sizeof(Socket));
@@ -109,7 +115,8 @@ void session_init(SessionInfo *sess, Socket *p_sock)
 
     sess->isRun = 1;
     sess->isPasv = 0;
-    
+
+    return sess;
 }
 
 void session_exit(SessionInfo *sess)
@@ -118,7 +125,7 @@ void session_exit(SessionInfo *sess)
     fclose(sess->cmdSocket->fpIn);
     fclose(sess->cmdSocket->fpOut);
     free(sess->cmdSocket);
-    // free(self->dataSocket);
+    free(sess->dataSocket);
     free(sess);
 }
 

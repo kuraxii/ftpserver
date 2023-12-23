@@ -54,7 +54,7 @@ typedef struct FtpCmd
 
 
 void cmd_structor(FtpCmd *);
-void ftp_cmd_init(FtpCmd *, struct SessionInfo *);
+FtpCmd* ftp_cmd_init(FtpCmd *, struct SessionInfo *);
 void ftp_cmd_exit(FtpCmd *);
 
 

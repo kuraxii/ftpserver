@@ -30,7 +30,7 @@ typedef struct SessionInfo
 
 void *session_thread(void *arg);
 
-void session_init(SessionInfo *, Socket *);
+SessionInfo* session_init(SessionInfo *, Socket *);
 void session_exit(SessionInfo *);
 void welccome(SessionInfo *);
 int recv_by_cmd(SessionInfo *);
