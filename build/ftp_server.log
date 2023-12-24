@@ -1160,3 +1160,1539 @@
 2023-12-23 17:15:02 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 211 Goodbye
 
 2023-12-23 17:15:02 INFO  session_thread.c :79 : session thread exit, ip: 127.0.0.1
+2023-12-24 16:03:15 INFO  ftp_log.c        :34 : log init
+2023-12-24 16:07:31 INFO  session_thread.c :114: session init
+2023-12-24 16:07:31 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:31 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:07:31 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:31 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:07:31 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:07:31 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:31 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:07:31 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:07:31 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:31 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:07:31 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:07:31 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:31 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:07:31 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:07:31 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: SYST
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:SYST, arg:.
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :64 : function: syst_run: SYST executing
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 215 UNIX Type: L8
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :66 : function: syst_run: SYST finished
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: FEAT
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:FEAT, arg:.
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :736: function: feat_run: Giving FEAT
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 211-Features supported
+
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string:  UTF-8
+
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string:  SIZE
+
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 211 End
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :741: function: feat_run: Gave FEAT
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj"
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:07:33 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,135,72)
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: LIST
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:LIST, arg:.
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:07:33 INFO  ftp_cmd.c        :288: function: retr_run: read end of file: /home/zzj
+2023-12-24 16:07:33 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:07:33 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:07:33 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :114: session init
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:09:48 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:09:48 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj/desktop"
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:09:48 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,167,30)
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: LIST
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:LIST, arg:.
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :288: function: retr_run: read end of file: /home/zzj/desktop
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:09:48 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,167,30)
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:09:48 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: STOR wsl-ubuntu22.04.tar
+
+2023-12-24 16:09:48 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:STOR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:09:48 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:09:48 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 125 Data connection already open; transfer starting.
+
+2023-12-24 16:10:40 INFO  ftp_cmd.c        :565: function: stor_run: read end of socket
+2023-12-24 16:10:40 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:10:40 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:10:40 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:03 INFO  ftp_log.c        :34 : log init
+2023-12-24 16:17:08 INFO  session_thread.c :114: session init
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:17:08 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:17:08 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:17:08 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,191,141)
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: LIST
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:LIST, arg:.
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :288: function: retr_run: read end of file: /home/zzj/desktop
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:17:08 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,191,141)
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:17:08 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: STOR wsl-ubuntu22.04.tar
+
+2023-12-24 16:17:08 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:STOR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:17:08 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:08 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 125 Data connection already open; transfer starting.
+
+2023-12-24 16:17:09 INFO  session_thread.c :114: session init
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:17:09 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:17:09 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:/home/zzj.
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj"
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD desktop
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:desktop.
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 16:17:09 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:17:09 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj/desktop"
+
+2023-12-24 16:17:09 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 16:17:09 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:18:03 INFO  ftp_cmd.c        :565: function: stor_run: read end of socket
+2023-12-24 16:18:03 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:18:03 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:18:03 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:18:03 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:18:03 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:18:03 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:18:03 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:18:03 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,132,245)
+
+2023-12-24 16:18:03 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:18:03 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:18:03 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: LIST
+
+2023-12-24 16:18:03 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:LIST, arg:.
+2023-12-24 16:18:03 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:18:03 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:18:03 INFO  ftp_cmd.c        :288: function: retr_run: read end of file: /home/zzj/desktop
+2023-12-24 16:18:03 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:18:03 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:18:03 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:19:03 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:19:03 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:20:54 INFO  session_thread.c :114: session init
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:20:54 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:20:54 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:20:54 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,144,114)
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:20:54 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR wsl-ubuntu22.04.tar
+
+2023-12-24 16:20:54 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:RETR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:20:54 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:20:54 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:21:14 INFO  session_thread.c :114: session init
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:21:14 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:21:14 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:21:14 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,148,23)
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:21:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR wsl-ubuntu22.04.tar
+
+2023-12-24 16:21:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:RETR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:21:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:21:22 ERROR ftp_cmd.c        :469: function: retr_run: read file: /home/zzj/desktop/wsl-ubuntu22.04.tar error
+2023-12-24 16:21:22 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:22 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 550 Failed to read file.
+
+2023-12-24 16:21:22 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:22 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:21:22 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:21:34 INFO  session_thread.c :114: session init
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:21:34 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:21:34 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:21:34 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,134,138)
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:21:34 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR wsl-ubuntu22.04.tar
+
+2023-12-24 16:21:34 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:RETR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:21:34 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:34 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:21:45 ERROR ftp_cmd.c        :469: function: retr_run: read file: /home/zzj/desktop/wsl-ubuntu22.04.tar error
+2023-12-24 16:21:45 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:21:45 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 550 Failed to read file.
+
+2023-12-24 16:21:45 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:21:45 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:21:45 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:22:05 ERROR ftp_cmd.c        :469: function: retr_run: read file: /home/zzj/desktop/wsl-ubuntu22.04.tar error
+2023-12-24 16:22:05 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:22:05 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 550 Failed to read file.
+
+2023-12-24 16:22:05 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:22:05 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:22:05 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:34:57 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD test
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:test.
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:34:57 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop/test
+2023-12-24 16:34:57 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 16:34:57 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj/desktop/test"
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 16:34:57 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:34:57 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:34:57 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:34:57 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,185,187)
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:34:57 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: LIST
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:LIST, arg:.
+2023-12-24 16:34:57 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:34:57 INFO  ftp_cmd.c        :288: function: retr_run: read end of file: /home/zzj/desktop/test
+2023-12-24 16:34:57 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:34:57 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:34:57 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :114: session init
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:35:00 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:35:00 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop/test
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop/test.
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop/test
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj/desktop/test"
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE A
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:TYPE, arg:A.
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to ASCII mode.
+
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:35:00 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,137,114)
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR 2.c
+
+2023-12-24 16:35:00 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:RETR, arg:2.c.
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:35:00 ERROR ftp_cmd.c        :469: function: retr_run: read file: /home/zzj/desktop/test/2.c error
+2023-12-24 16:35:00 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:00 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 550 Failed to read file.
+
+2023-12-24 16:35:00 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:11 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:35:11 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:35:11 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:35:11 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:11 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,186,215)
+
+2023-12-24 16:35:11 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:35:11 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:11 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR 2.c
+
+2023-12-24 16:35:11 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:RETR, arg:2.c.
+2023-12-24 16:35:11 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:11 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:35:11 ERROR ftp_cmd.c        :469: function: retr_run: read file: /home/zzj/desktop/test/2.c error
+2023-12-24 16:35:11 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:11 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 550 Failed to read file.
+
+2023-12-24 16:35:11 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:13 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:35:13 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:35:13 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:35:13 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:13 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,187,72)
+
+2023-12-24 16:35:13 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:35:13 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:13 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR 2.c
+
+2023-12-24 16:35:13 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:RETR, arg:2.c.
+2023-12-24 16:35:13 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:13 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:35:13 ERROR ftp_cmd.c        :469: function: retr_run: read file: /home/zzj/desktop/test/2.c error
+2023-12-24 16:35:13 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:13 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 550 Failed to read file.
+
+2023-12-24 16:35:13 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:35:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:35:14 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:35:14 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:14 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,130,92)
+
+2023-12-24 16:35:14 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:35:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:35:14 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR 2.c
+
+2023-12-24 16:35:14 INFO  ftp_cmd.c        :793: function: cmd_structor: cmd:RETR, arg:2.c.
+2023-12-24 16:35:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:35:14 ERROR ftp_cmd.c        :469: function: retr_run: read file: /home/zzj/desktop/test/2.c error
+2023-12-24 16:35:14 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:35:14 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 550 Failed to read file.
+
+2023-12-24 16:35:14 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:36:14 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:36:14 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:37:39 INFO  ftp_log.c        :34 : log init
+2023-12-24 16:37:43 INFO  session_thread.c :114: session init
+2023-12-24 16:37:43 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:37:43 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:37:43 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:37:43 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:37:43 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:37:43 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:37:43 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:37:43 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:37:43 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:37:43 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:37:43 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:37:43 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop/test
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop/test.
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:37:43 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:43 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:37:43 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop/test
+2023-12-24 16:37:43 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE A
+
+2023-12-24 16:37:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:A.
+2023-12-24 16:37:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to ASCII mode.
+
+2023-12-24 16:37:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:37:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:37:44 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:37:44 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:44 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,146,101)
+
+2023-12-24 16:37:44 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:37:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:37:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR 2.c
+
+2023-12-24 16:37:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:RETR, arg:2.c.
+2023-12-24 16:37:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:37:44 INFO  ftp_cmd.c        :467: function: retr_run: read end of file: /home/zzj/desktop/test/2.c
+2023-12-24 16:37:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:37:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:37:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :114: session init
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:38:01 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:38:01 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop/test
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop/test.
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop/test
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CDUP
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CDUP, arg:.
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:38:01 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: CDUP ,IP: 172.28.96.1
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD ..
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:...
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj/desktop"
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:38:01 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,185,11)
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: LIST
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:LIST, arg:.
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:38:01 INFO  ftp_cmd.c        :288: function: retr_run: read end of file: /home/zzj/desktop
+2023-12-24 16:38:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:38:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:38:04 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:38:04 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:38:04 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:38:04 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:38:04 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,173,3)
+
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:38:04 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR wsl-ubuntu22.04.tar
+
+2023-12-24 16:38:04 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:RETR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:38:04 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:04 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:38:24 INFO  session_thread.c :114: session init
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:38:24 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:38:24 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:38:24 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,171,198)
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:38:24 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR wsl-ubuntu22.04.tar
+
+2023-12-24 16:38:24 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:RETR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:38:24 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:24 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:38:36 INFO  ftp_cmd.c        :467: function: retr_run: read end of file: /home/zzj/desktop/wsl-ubuntu22.04.tar
+2023-12-24 16:38:36 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:36 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:38:36 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:36 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:38:36 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:38:44 INFO  session_thread.c :114: session init
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:38:44 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:38:44 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:38:44 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,181,91)
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:38:44 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR wsl-ubuntu22.04.tar
+
+2023-12-24 16:38:44 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:RETR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:38:44 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:44 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:38:57 INFO  ftp_cmd.c        :467: function: retr_run: read end of file: /home/zzj/desktop/wsl-ubuntu22.04.tar
+2023-12-24 16:38:57 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:38:57 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:38:57 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:38:57 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:38:57 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:39:15 INFO  ftp_cmd.c        :467: function: retr_run: read end of file: /home/zzj/desktop/wsl-ubuntu22.04.tar
+2023-12-24 16:39:15 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:39:15 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:39:15 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:39:15 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:39:15 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:40:37 INFO  session_thread.c :114: session init
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:40:37 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:40:37 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop/test
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop/test.
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop/test
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:40:37 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,181,178)
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR fabo.i
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:RETR, arg:fabo.i.
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:40:37 INFO  ftp_cmd.c        :467: function: retr_run: read end of file: /home/zzj/desktop/test/fabo.i
+2023-12-24 16:40:37 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:40:37 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:40:37 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:41:37 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:41:37 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:42:02 INFO  ftp_log.c        :34 : log init
+2023-12-24 16:42:05 INFO  session_thread.c :114: session init
+2023-12-24 16:42:05 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:42:05 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:42:05 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:42:05 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:42:05 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:42:05 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:42:05 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:42:05 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:42:05 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:42:05 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:42:05 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:42:05 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop/test
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop/test.
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:42:05 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:05 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:42:05 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop/test
+2023-12-24 16:42:05 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:06 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 16:42:06 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 16:42:06 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:06 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 16:42:06 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:06 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:42:06 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:42:06 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:42:06 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:06 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,152,253)
+
+2023-12-24 16:42:06 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:42:06 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:06 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR fabo.i
+
+2023-12-24 16:42:06 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:RETR, arg:fabo.i.
+2023-12-24 16:42:06 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:06 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:42:06 INFO  ftp_cmd.c        :467: function: retr_run: read end of file: /home/zzj/desktop/test/fabo.i
+2023-12-24 16:42:06 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:06 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:42:06 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:16 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:42:16 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:42:16 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:42:16 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:16 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:42:16 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:42:16 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:16 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 16:42:16 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 16:42:16 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 16:42:16 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:16 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,128,162)
+
+2023-12-24 16:42:16 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 16:42:16 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:42:16 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: RETR wsl-ubuntu22.04.tar
+
+2023-12-24 16:42:16 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:RETR, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:42:16 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:42:16 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 16:43:01 INFO  ftp_cmd.c        :467: function: retr_run: read end of file: /home/zzj/desktop/wsl-ubuntu22.04.tar
+2023-12-24 16:43:01 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:43:01 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 16:43:01 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:44:01 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:44:01 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 16:45:51 INFO  session_thread.c :114: session init
+2023-12-24 16:45:51 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 16:45:51 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 16:45:51 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:45:51 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:45:51 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 16:45:51 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 16:45:51 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 16:45:51 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 16:45:51 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 16:45:51 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 16:45:51 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 16:45:51 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: CWD /home/zzj/desktop
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:CWD, arg:/home/zzj/desktop.
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :144: function: cwd_run: CWD executing
+2023-12-24 16:45:51 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 CWD successful
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :180: function: cwd_run: CWD complete, workFile/home/zzj/desktop
+2023-12-24 16:45:51 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: DELE wsl-ubuntu22.04.tar
+
+2023-12-24 16:45:51 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:DELE, arg:wsl-ubuntu22.04.tar.
+2023-12-24 16:45:51 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 16:45:51 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 250 Requested file action okay, completed.
+
+2023-12-24 16:45:51 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 16:46:01 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 16:46:01 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1
+2023-12-24 17:01:36 INFO  session_thread.c :114: session init
+2023-12-24 17:01:36 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:36 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 220 zjFTP 0.0.0.1 ready
+
+2023-12-24 17:01:36 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:36 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH TLS
+
+2023-12-24 17:01:36 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:TLS.
+2023-12-24 17:01:36 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:36 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 17:01:36 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 17:01:36 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:36 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: AUTH SSL
+
+2023-12-24 17:01:36 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:AUTH, arg:SSL.
+2023-12-24 17:01:36 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:36 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 502 Comman not recognized
+
+2023-12-24 17:01:36 INFO  session_thread.c :73 : Operation failed, Invalid command. Command: AUTH ,IP: 172.28.96.1
+2023-12-24 17:01:36 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: USER zzj
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:USER, arg:zzj.
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :76 : function: user_run: USER executing
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 331 Send password
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :78 : function: user_run: USER finished
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASS 123456
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASS, arg:123456.
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :87 : function: pass_run: PASS executing
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 230 Access granted
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :131: function: pass_run: PASS finished
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: SYST
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:SYST, arg:.
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :64 : function: syst_run: SYST executing
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 215 UNIX Type: L8
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :66 : function: syst_run: SYST finished
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: FEAT
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:FEAT, arg:.
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :730: function: feat_run: Giving FEAT
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 211-Features supported
+
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string:  UTF-8
+
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string:  SIZE
+
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 211 End
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :735: function: feat_run: Gave FEAT
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PWD
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PWD, arg:.
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :193: function: pwd_run: PWD executing
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 257 "/home/zzj"
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :198: function: pwd_run: PWD complete, 
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: TYPE I
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:TYPE, arg:I.
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 200 Switching to Binary mode.
+
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: PASV
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:PASV, arg:.
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :344: function: pasv_run: PASV set start
+2023-12-24 17:01:38 INFO  session_thread.c :158: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :165: function: send_by_cmd: send by cmd success. string: 227 Entering Passive Mode (172,28,100,118,184,236)
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :362: function: pasv_run: PASV set complete
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :183: function: recv_by_cmd: recv by cmd success, string: LIST
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :787: function: cmd_structor: cmd:LIST, arg:.
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 150 Send file.
+
+2023-12-24 17:01:38 INFO  ftp_cmd.c        :288: function: retr_run: read end of file: /home/zzj
+2023-12-24 17:01:38 INFO  session_thread.c :141: function: send_by_cmd: send by cmd start
+2023-12-24 17:01:38 INFO  session_thread.c :148: function: send_by_cmd: send by cmd success. string: 226 Transmission finished.
+
+2023-12-24 17:01:38 INFO  session_thread.c :173: function: recv_by_cmd: recv by cmd start
+2023-12-24 17:15:00 WARN  session_thread.c :178: fgets error or socket close
+2023-12-24 17:15:00 INFO  session_thread.c :79 : session thread exit, ip: 172.28.96.1

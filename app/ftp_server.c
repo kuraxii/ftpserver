@@ -10,7 +10,6 @@
 #include <common.h>
 #include <ftp_cmd.h>
 #include <arpa/inet.h>
-#include <bits/posix2_lim.h>
 #include <ctype.h>
 #include <fcntl.h>
 #include <netinet/in.h>

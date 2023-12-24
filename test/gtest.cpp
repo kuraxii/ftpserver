@@ -13,56 +13,96 @@
 #include <libgen.h>
 #include <string.h>
 
-using namespace testing;
 
-// 假设我们已经有了一个mock的系统调用类
-class MockSystemCalls {
-public:
-    MOCK_METHOD(int, getsockname, (int sockfd, struct sockaddr *addr, socklen_t *addrlen));
-    MOCK_METHOD(char*, inet_ntoa, (struct in_addr in));
-};
-
-void getip(int sockfd, int *ip)
+void _getip(const char* s_ip, int *ip)
 {
-    socklen_t addr_size = sizeof(struct sockaddr_in);
-    struct sockaddr_in addr;
-    getsockname(sockfd, (struct sockaddr *)&addr, &addr_size);
-
-    char *host = inet_ntoa(addr.sin_addr);
-
-#ifdef DEBUG
-    log_debug("function: getip: ip: %s", host);
-#endif
-
-    sscanf(host, "%d.%d.%d.%d", &ip[0], &ip[1], &ip[2], &ip[3]);
+    sscanf(s_ip, "%d.%d.%d.%d", &ip[0], &ip[1], &ip[2], &ip[3]);
 }
+
+
+
 
 // 测试getip函数
-TEST(FTPCommandTest, GetIPTest) {
-    // 创建一个sockfd和ip数组
-    int sockfd = 0;
-    int ip[4] = {0};
+TEST(GetIpTest, ReturnsCorrectIp) {
+    const char *ip1 = "197.99.140.249";
+    const char *ip2 = "50.52.5.243";
+    const char *ip3 = "165.53.214.161";
+    const char *ip4 = "83.250.46.47";
 
-    // 创建一个mock的系统调用对象
-    MockSystemCalls mock_syscalls;
+    int ip[4];
 
-    // 设置expectations
-    struct sockaddr_in addr;
-    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    EXPECT_CALL(mock_syscalls, getsockname(_, _, _))
-        .WillOnce(DoAll(SetArgPointee<1>(addr), Return(0)));  // 假设getsockname成功
-    EXPECT_CALL(mock_syscalls, inet_ntoa(_))
-        .WillOnce(Return(ByMove("127.0.0.1")));  // 假设inet_ntoa返回了正确的IP地址
+    // Test for ip1
+    _getip(ip1, ip);
+    EXPECT_EQ(ip[0], 197);
+    EXPECT_EQ(ip[1], 99);
+    EXPECT_EQ(ip[2], 140);
+    EXPECT_EQ(ip[3], 249);
 
-    // 调用getip函数
-    getip(sockfd, ip);
+    // Test for ip2
+    _getip(ip2, ip);
+    EXPECT_EQ(ip[0], 50);
+    EXPECT_EQ(ip[1], 52);
+    EXPECT_EQ(ip[2], 5);
+    EXPECT_EQ(ip[3], 243);
 
-    // 检查结果
-    EXPECT_EQ(ip[0], 127);
-    EXPECT_EQ(ip[1], 0);
-    EXPECT_EQ(ip[2], 0);
-    EXPECT_EQ(ip[3], 1);
+    // Test for ip3
+    _getip(ip3, ip);
+    EXPECT_EQ(ip[0], 165);
+    EXPECT_EQ(ip[1], 53);
+    EXPECT_EQ(ip[2], 214);
+    EXPECT_EQ(ip[3], 161);
+
+    // Test for ip4
+    _getip(ip4, ip);
+    EXPECT_EQ(ip[0], 83);
+    EXPECT_EQ(ip[1], 250);
+    EXPECT_EQ(ip[2], 46);
+    EXPECT_EQ(ip[3], 47);
 }
+
+
+void struct_path(char *path, const char *workDir, const char *arg)
+{
+    if (arg[0] == '/')
+        strcpy(path, arg);
+    else
+        sprintf(path, "%s/%s", workDir, arg);
+}
+
+class StructPathTest : public ::testing::Test {
+protected:
+    static const int pathSize = 1024;
+    char path[pathSize];
+
+    void SetUp() override {
+        // Initial setup can be done here
+    }
+
+    void TearDown() override {
+        // Clean up can be done here
+    }
+};
+
+// Test when 'arg' is an absolute path
+TEST_F(StructPathTest, HandlesAbsolutePath) {
+    const char *workDir = "/home/user";
+    const char *arg = "/absolute/path";
+
+    struct_path(path, workDir, arg);
+    EXPECT_STREQ(path, "/absolute/path");
+}
+
+// Test when 'arg' is a relative path
+TEST_F(StructPathTest, HandlesRelativePath) {
+    const char *workDir = "/home/user";
+    const char *arg = "relative/path";
+
+    struct_path(path, workDir, arg);
+    EXPECT_STREQ(path, "/home/user/relative/path");
+}
+
+
+
 
 
 int main(int argc, char *argv[])

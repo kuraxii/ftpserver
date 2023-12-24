@@ -34,7 +34,7 @@ CC = gcc
 CPP = g++
 
 # 链接库
-LIBS =  -lpthread -lsqlite3
+LIBS =  -lpthread
 TEST_LIBS = -lgtest -DLOG_USE_COLOR
 
 # 头文件参数
@@ -51,7 +51,7 @@ CFLAGS = -Wall -DLOG_USE_COLOR
 
 # server
 $(TARGET): $(C_OBJS) $(CPP_OBJS)
-	$(CC) -o $(TARGET) $(C_OBJS) $(CPP_OBJS) $(LIBS) $(LDFLAGS)  $(INCLUDE) -g
+	$(CC) -o $(TARGET) $(C_OBJS) $(CPP_OBJS) $(LIBS) $(LDFLAGS)  
 	
 
 # test

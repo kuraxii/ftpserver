@@ -25,7 +25,7 @@ const char *map[] = {"SYST", "USER", "PASS", "CWD", "PWD",  "LIST", "PASV", "POR
 const char *administrator[2] = {"zzj", "123456"}; // 默认账号
 
 // 通过文件描述符获取服务器ip
-void getip(int sockfd, int *ip)
+void _getip(int sockfd, int *ip)
 {
     socklen_t addr_size = sizeof(struct sockaddr_in);
     struct sockaddr_in addr;
@@ -40,7 +40,7 @@ void getip(int sockfd, int *ip)
     sscanf(host, "%d.%d.%d.%d", &ip[0], &ip[1], &ip[2], &ip[3]);
 }
 
-void get_port(int *port)
+void _get_port(int *port)
 {
     srand(time(NULL));
     port[0] = 128 + (rand() % 64);
@@ -102,11 +102,11 @@ void pass_run(FtpCmd *ftpCmd)
         char *saveptr;
         while (fgets(line, sizeof(line), file))
         {
-            char *username = strtok_r(line, ",", &saveptr);
-            char *password = strtok_r(NULL, "\n", &saveptr);
+            char *userName = strtok_r(line, ",", &saveptr);
+            char *passWord = strtok_r(NULL, "\n", &saveptr);
 
-            if (username != NULL && password != NULL && strcmp(username, sess->userName) == 0 &&
-                strcmp(password, ftpCmd->arg) == 0)
+            if (userName != NULL && passWord != NULL && strcmp(userName, sess->userName) == 0 &&
+                strcmp(passWord, ftpCmd->arg) == 0)
             {
                 loginSuccess = 1;
                 break;
@@ -343,8 +343,8 @@ void pasv_run(FtpCmd *ftpCmd)
 
     log_info("function: pasv_run: PASV set start");
 
-    getip(sess->cmdSocket->socketFd, ip);
-    get_port(port);
+    _getip(sess->cmdSocket->socketFd, ip);
+    _get_port(port);
 
     // 诺监听描述存在则关闭
     if (sess->isPasv)
@@ -455,7 +455,6 @@ void retr_run(FtpCmd *ftpCmd)
         log_debug("function: retr_run: set ispasv: 0");
 #endif
         sess->dataSocket->fpOut = fdopen(sess->dataSocket->socketFd, "w");
-
         response = "150 Send file.\n";
         send_by_cmd(sess, response);
 
@@ -464,18 +463,13 @@ void retr_run(FtpCmd *ftpCmd)
             err = fread(buf, 1, sizeof(buf), fp);
             if (err == 0)
             {
-                if (ferror(fp))
-                {
-                    log_error("function: retr_run: read file: %s error", path);
-                    response = "550 Failed to read file.\r\n";
-                    goto read_err;
-                }
+                
                 log_info("function: retr_run: read end of file: %s", path);
                 response = "226 Transmission finished.\r\n";
                 goto end_of_file;
             }
 
-            fwrite(buf, 1, err, fp);
+            fwrite(buf, 1, err, sess->dataSocket->fpOut);
         }
     }
     else if (sess->isPort)
@@ -483,7 +477,7 @@ void retr_run(FtpCmd *ftpCmd)
         // 主动模式
     }
 
-read_err:
+
 end_of_file:
     fclose(fp);
     fclose(sess->dataSocket->fpOut);
